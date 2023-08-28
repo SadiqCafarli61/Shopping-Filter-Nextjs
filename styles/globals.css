@@ -1,27 +1,166 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+    margin: 0 ;
+    padding: 0;
+    text-decoration: none !important;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.overlay{
+position: fixed;
+width: 100%;
+overflow-x: hidden;
+display: none;
+left: 0;
+right: 0;
+
+}
+.open{
+    display: block;
+}
+.overlay .overlay-menu{
+  position: relative;
+    height: 100vh;
+    display: flex;
+    top: 200px;
+   margin-left: 30px;
+    flex-direction: column;
+}
+.overlay .overlay-menu a{
+    color: #000;
+    font-size: 18px;
+    margin-top: 40px;
+    border-bottom: 1px solid;
+    width: 500px;
+    padding-bottom: 10px;
+}
+.header-section{
+    display: flex;
+    align-items: center;
+ justify-content: space-between;
+ 
+    padding: 0 40px;
+}
+.header-section .logo{
+    width: 150px;
+    cursor: pointer;
+}
+.header-section .logo img{
+    width: 100%;
+}
+.header-section .buttons button{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.header-section .buttons{
+    display: flex;
+    align-items: center;
+}
+.header-section .buttons .searchIcon{
+    cursor: pointer;
+    margin-left: 15px;
+    font-size: 28px;
+    color: #000;
+    font-weight: 500;
+}
+.header-section .buttons .shopIcon{
+    cursor: pointer;
+    margin-left: 15px;
+    color: #000;
+    font-weight: 500;
+    font-size: 28px;
+}
+.openMenu{
+    cursor: pointer;
+    font-size: 30px;
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 6px;
+    display: none;
+    background-color: transparent;
+}
+.cart-section{
+    padding-top: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.cart-section h2{
+    padding-bottom: 20px;
+    font-size: 34px;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+.cart-section .button-section button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 22px;
+    margin-left: 10px;
+    font-weight: 500;
+    transition: all .4s ease;
+    
+}
+.cart-section .carts-section{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+.cart-section .carts-section .row .card{
+    height: 540px;
+    width: auto;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    background-color: #e1e1e1;
+    border: none;
+}
+.cart-section .carts-section .row .card .img-top{
+    width: 100%;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.cart-section .carts-section .row .card .icons .starIcon{
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@media(max-width:1300px){
+    .cart-section .carts-section .row .card{
+        height: 420px;
+      
+    }
+}
+@media(max-width:991px){
+    .header-section .links{
+        display: flex;
+    }
+    .openMenu{
+        display: block;
+    }
+    .cart-section .carts-section .row {
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .cart-section .carts-section .row .card{
+       margin-top: 60px !important;
+        height: 450px;
+        width: 200px;
+    }
+}
+@media(max-width:768px){
+    .header-section{
+        padding: 0;
+    }
+    .header-section .logo{
+        width: 120px;
+    }
 }
